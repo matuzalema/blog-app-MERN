@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\client",
+    "\\client\\modules",
+    "\\client\\modules\\App",
+    "\\client\\modules\\Post",
+    "\\client\\modules\\Post\\components",
+    "\\client\\modules\\Post\\components\\PostListItem",
+    "\\client\\modules\\Post\\pages",
+    "\\client\\modules\\Post\\pages\\PostDetailPage"
+  ],
+  "SelectedNode": "\\client\\modules\\Post\\components\\PostListItem\\PostListItem.js",
+  "PreviewInSolutionExplorer": true
+}

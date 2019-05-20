@@ -86,18 +86,10 @@ function mapDispatchToProps(dispatch, props) {
     editPostRequest: (post) => dispatch(editPostRequest(props.params.cuid, post)),
   };
 }
-
 // Actions required to provide data for this component to render in server side.
 PostDetailPage.need = [params => {
   return fetchPost(params.cuid);
 }];
-
-// Retrieve data from store as props
-function mapStateToProps(state, props) {
-  return {
-    post: getPost(state, props.params.cuid),
-  };
-}
 
 PostDetailPage.propTypes = {
   post: PropTypes.shape({
