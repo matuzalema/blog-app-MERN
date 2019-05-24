@@ -38,6 +38,8 @@ export function addPost(req, res) {
 
   newPost.slug = slug(newPost.title.toLowerCase(), { lowercase: true });
   newPost.cuid = cuid();
+  newPost.voteCount = 0
+
   newPost.save((err, saved) => {
     if (err) {
       res.status(500).send(err);
@@ -69,6 +71,25 @@ export function editPost(req, res) {
     }
     res.json({ post });
   });
+}
+
+export function thumbUp(req, res) {
+  console.log(req.params.cuid, req.body.votes)
+  Post.update({ cuid: req.params.cuid }, { voteCount: req.body.votes }).exec((err) => {
+    if (err) {
+      res.status(500).send(err);
+    }
+    res.json({ msg: 'success' });
+  })
+}
+
+export function thumbDown(req, res) {
+  Post.update({ cuid: req.params.cuid }, { voteCount: req.body.votes }).exec((err) => {
+    if (err) {
+      res.status(500).send(err);
+    }
+    res.json({ msg: 'success' });
+  })
 }
 
 /**

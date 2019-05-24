@@ -85,16 +85,14 @@ export function editPostRequest(cuid, post) {
 export function thumbUp(cuid){
   return {
     type: THUMB_UP,
-    cuid,
+    cuid
   }
 }
 
 export function thumbUpRequest(cuid, count) {
   return (dispatch) => {
-    return callApi(`posts/${cuid}`, 'put', {
-      post: {
-        vote: count +1,
-      },
+    return callApi(`post/thumbup/${cuid}`, 'put', {
+      votes: count + 1,
     }).then(() => dispatch(thumbUp(cuid)));
   };
 }
@@ -102,16 +100,14 @@ export function thumbUpRequest(cuid, count) {
 export function thumbDown(cuid){
   return {
     type: THUMB_DOWN,
-    cuid,
+    cuid
   }
 }
 
 export function thumbDownRequest(cuid, count) {
   return (dispatch) => {
-    return callApi(`posts/${cuid}`, 'put', {
-      post: {
-        vote: count -1,
-      },
+    return callApi(`post/thumbdown/${cuid}`, 'put', {
+      votes: count - 1,
     }).then(() => dispatch(thumbDown(cuid)));
   };
 }

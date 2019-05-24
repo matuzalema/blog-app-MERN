@@ -28,12 +28,12 @@ const PostReducer = (state = initialState, action) => {
 
     case THUMB_UP:
       return {
-        data: state.data.map(post => {return post.cuid === action.cuid ? Object.assign({}, post, {vote: post.vote +1}) : post }),
+        data: state.data.map(post => {return post.cuid === action.cuid ? Object.assign({}, post, { voteCount: post.voteCount + 1}) : post }),
       };
 
     case THUMB_DOWN:
       return {
-        data: state.data.map(post => {return post.cuid === action.cuid ? Object.assign({}, post, {vote: post.vote -1}) : post }),
+        data: state.data.map(post => {return post.cuid === action.cuid ? Object.assign({}, post, { voteCount: post.voteCount - 1}) : post }),
       };
 
     default:
