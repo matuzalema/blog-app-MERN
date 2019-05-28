@@ -18,7 +18,7 @@ if (process.env.NODE_ENV !== 'production') {
   require('./modules/Post/pages/PostListPage/PostListPage');
   require('./modules/Post/pages/PostDetailPage/PostDetailPage');
   require('./modules/Home/Home');
-   require('./modules/About/About');
+  require('./modules/About/About');
 }
 
 // react-router setup with code-splitting

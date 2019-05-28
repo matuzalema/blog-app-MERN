@@ -17,10 +17,10 @@ function PostListItem(props) {
       <p className={styles['author-name']}><FormattedMessage id="by" /> {props.post.name}</p>
       <p className={styles['post-desc']}>{props.post.content}</p>
       <p className={styles['post-action']}>
-        <a href="#" onClick={props.onDelete}><FormattedMessage id="deletePost" /></a>
-        <a href="#" onClick={props.onThumbUp}>Dodaj like'a</a>
-        <a href="#" onClick={props.onThumbDown}>Odejmij like'a</a>
-        <span>{props.post.voteCount}</span>
+        <a href="#" className={styles.btnDelete} onClick={props.onDelete}><FormattedMessage id="deletePost" /></a>
+        <a href="#" className={styles.btnLike} onClick={props.onThumbUp}>like +</a>
+        <a href="#" className={styles.btnLike} onClick={props.onThumbDown}>like -</a>
+        <span className={styles.likesNumber}>{props.post.voteCount}</span>
       </p>
       <hr className={styles.divider} />
     </div>
